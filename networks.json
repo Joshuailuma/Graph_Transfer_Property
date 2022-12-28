@@ -1,0 +1,10 @@
+{
+  "goerli": {
+    "TransferProperty": {
+      "address": "0xB2a74AcbbB57D2ceD305724a5e6b2c5c03F453f3"
+    },
+    "BasicNft": {
+      "address": "0xF74EBb7bB8883E22a8Be30F8C2EDaF7f4B58f360"
+    }
+  }
+}

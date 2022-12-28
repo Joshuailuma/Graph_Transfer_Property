@@ -1,0 +1,53 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: TransferProperty
+    network: goerli
+    source:
+      address: "0xB2a74AcbbB57D2ceD305724a5e6b2c5c03F453f3"
+      abi: TransferProperty
+      startBlock: 8211233
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ItemSold
+      abis:
+        - name: TransferProperty
+          file: TransferProperty/abis/TransferProperty.json
+      eventHandlers:
+        - event: ItemSold(indexed address,indexed address,indexed uint256)
+          handler: handleItemSold
+      file: TransferProperty/TransferProperty.wasm
+  - kind: ethereum
+    name: BasicNft
+    network: goerli
+    source:
+      address: "0xF74EBb7bB8883E22a8Be30F8C2EDaF7f4B58f360"
+      abi: BasicNft
+      startBlock: 8211233
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - PropertyMinted
+        - Transfer
+      abis:
+        - name: BasicNft
+          file: BasicNft/abis/BasicNft.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: PropertyMinted(indexed uint256,indexed address,address)
+          handler: handlePropertyMinted
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: BasicNft/BasicNft.wasm
