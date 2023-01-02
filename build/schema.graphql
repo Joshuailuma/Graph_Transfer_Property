@@ -1,18 +1,18 @@
-type ItemSold @entity(immutable: true) {
+type ItemSold @entity(immutable: false) {
   id: Bytes!
   ownerAddress: Bytes! # address
   propertyAddress: Bytes! # address
   tokenId: BigInt! # uint256
-  # blockNumber: BigInt!
+  blockNumber: BigInt!
   blockTimestamp: BigInt!
   # transactionHash: Bytes!
 }
-type Approval @entity(immutable: true) {
+type Approval @entity(immutable: false) {
   id: Bytes!
   owner: Bytes! # address
   approved: Bytes! # address
   tokenId: BigInt! # uint256
-  # blockNumber: BigInt!
+  blockNumber: BigInt!
   blockTimestamp: BigInt!
   # transactionHash: Bytes!
 }
@@ -27,17 +27,17 @@ type Approval @entity(immutable: true) {
 #   transactionHash: Bytes!
 # }
 
-type PropertyMinted @entity(immutable: true) {
+type PropertyMinted @entity(immutable: false) {
   id: Bytes!
   tokenId: BigInt! # uint256
   ownerAddress: Bytes! # address
   propertyAddress: Bytes! # address
-  # blockNumber: BigInt!
+  blockNumber: BigInt!
   blockTimestamp: BigInt!
   # transactionHash: Bytes!
 }
 
-type Transfer @entity(immutable: true) {
+type Transfer @entity(immutable: false) {
   id: Bytes!
   from: Bytes! # address
   to: Bytes! # address

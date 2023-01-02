@@ -69,6 +69,15 @@ export class ItemSold extends Entity {
     this.set("tokenId", Value.fromBigInt(value));
   }
 
+  get blockNumber(): BigInt {
+    let value = this.get("blockNumber");
+    return value!.toBigInt();
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set("blockNumber", Value.fromBigInt(value));
+  }
+
   get blockTimestamp(): BigInt {
     let value = this.get("blockTimestamp");
     return value!.toBigInt();
@@ -135,6 +144,15 @@ export class Approval extends Entity {
 
   set tokenId(value: BigInt) {
     this.set("tokenId", Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value = this.get("blockNumber");
+    return value!.toBigInt();
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set("blockNumber", Value.fromBigInt(value));
   }
 
   get blockTimestamp(): BigInt {
@@ -205,6 +223,15 @@ export class PropertyMinted extends Entity {
 
   set propertyAddress(value: Bytes) {
     this.set("propertyAddress", Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value = this.get("blockNumber");
+    return value!.toBigInt();
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set("blockNumber", Value.fromBigInt(value));
   }
 
   get blockTimestamp(): BigInt {

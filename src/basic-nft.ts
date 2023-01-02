@@ -19,7 +19,7 @@ export function handleApproval(event: ApprovalEvent): void {
   entity.approved = event.params.approved
   entity.tokenId = event.params.tokenId
 
-  // entity.blockNumber = event.block.number
+  entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
   // entity.transactionHash = event.transaction.hash
 
@@ -49,7 +49,7 @@ export function handlePropertyMinted(event: PropertyMintedEvent): void {
   entity.ownerAddress = event.params.ownerAddress
   entity.propertyAddress = event.params.propertyAddress
 
-  // entity.blockNumber = event.block.number
+  entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
   // entity.transactionHash = event.transaction.hash
 
